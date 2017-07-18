@@ -23,7 +23,7 @@ require_once __DIR__.DIRECTORY_SEPARATOR.'lib.php';
 <?php echo prepareTable("SELECT * FROM books ") ?>
 </div>
 <script type="text/javascript">
-    'use script';
+    'use strict';
     $('input').change(function(event){
         event.preventDefault();
         $.ajax({
