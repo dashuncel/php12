@@ -5,7 +5,7 @@ if (isset($_POST)) {
     $needAnd=false;
     $needWhere=true;
 
-    $str = " SELECT * FROM BOOKS ";
+    $str = " SELECT * FROM books ";
     IF (isset($_POST['isbn']) and ! empty($_POST['isbn'])) {
         if ($needWhere) { $str.=' WHERE  '; $needWhere = false; };
         if ($needAnd)   { $str.=' AND  ';};

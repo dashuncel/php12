@@ -1,12 +1,7 @@
 <?php
-/*
-$host='university.netology.ru';
+$host='localhost';
 $user='byankina';
 $password='neto1170';
-*/
-$host='localhost';
-$user='root';
-$password='';
 $database='global';
 $dbport=3306;
 $opt = [

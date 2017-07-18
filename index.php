@@ -20,7 +20,7 @@ require_once __DIR__.DIRECTORY_SEPARATOR.'lib.php';
     </fieldset>
 </form>
 <div class="table">
-<?php echo prepareTable("SELECT * FROM BOOKS") ?>
+<?php echo prepareTable("SELECT * FROM books ") ?>
 </div>
 <script type="text/javascript">
     'use script';
