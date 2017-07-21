@@ -1,7 +1,10 @@
 <?php
+
+require_once 'mydata.php';
+
 $host='localhost';
-$user='byankina';
-$password='neto1170';
+$user=LOGIN;
+$password=PASSWD;
 $database='global';
 $dbport=3306;
 $opt = [
@@ -23,14 +26,26 @@ catch (PDOException $e)
 // выполняет запрос из параметре и готовит HTML таблицу
 function prepareTable($query) {
     global $pdo;
-    $statement=$pdo->prepare($query);
-    $statement->execute();
-    $rows=$statement->fetchAll();
-    $str='<table><thead>';
-    foreach ($rows[0] as $key=>$row) {
-        $str.="<th>$key</th>";
+
+    try {
+        $statement = $pdo->prepare($query);
+        $statement->execute();
     }
-    $str.='</thead>';
+    catch(PDOException $e) {
+        echo "Ошибка выполнения запроса $query к БД: ".$e->getMessage().'<br/>';
+        exit;
+    }
+
+    $rows = $statement->fetchAll();
+    $str = '<table><thead>';
+
+    if (! empty($rows[0]) && is_array($rows[0])) {
+        foreach ($rows[0] as $key => $row) {
+            $str .= "<th>$key</th>";
+        }
+        $str .= '</thead>';
+    }
+    else exit;
 
     foreach ($rows as $row) {
         $str.="<tr>";
