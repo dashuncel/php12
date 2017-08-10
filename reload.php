@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__.DIRECTORY_SEPARATOR.'lib.php';
 
-if (isset($_POST)) {
+if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST)) {
     $needAnd=false;
     $needWhere=true;
 

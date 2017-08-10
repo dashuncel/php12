@@ -3,8 +3,12 @@
 require_once 'mydata.php';
 
 $host='localhost';
+/*
 $user=LOGIN;
 $password=PASSWD;
+*/
+$user='root';
+$password='';
 $database='global';
 $dbport=3306;
 $opt = [
